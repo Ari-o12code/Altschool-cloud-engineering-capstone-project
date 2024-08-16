@@ -1,16 +1,16 @@
 # Local .terraform directories
-**/.terraform/*
+**terraform/.terraform/*
 
 # .tfstate files
-*.tfstate
-*.tfstate.*
+*terraform/.tfstate
+*terraform/.tfstate.*
 
 # .tfvars files
-*.tfvars
+*terraform/.tfvars
 
 # Ignore CLI configuration files
-.terraformrc
-terraform.rc
+terraform/.terraformrc
+terraform/terraform.rc
 
 # Ignore Mac/OSX system file, with the folder metadata
-.DS_Store
+terraform/.DS_Store
