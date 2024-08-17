@@ -95,6 +95,7 @@ Let's Encrypt
 
      ```bash
     mkdir kubernetes
+    cd kubernetes
     ```
     -keep both deployment.yaml and ingress.yaml files in the directory.
 
@@ -127,16 +128,22 @@ Let's Encrypt
 
     -Monitoring tools (Prometheus & Grafana) will be installed using helm after first adding the prometheus repo to our project from artifacthub;
     Run the command to install helm:
+
     ```bash
     helm install prometheus-community --namespace sock-shop prometheus-community/kube-prometheus-stack
     ```
+
+    ![terraform init](images/helm-install-prometheus.jpg)
+
     -Both prometheus and grafana can be added to the configurations of the ingress.yaml file and hosted on aws route53.
     -They can then be accessed as shown below;
 
     -Prometheus:
+
     ![terraform init](images/prometheus.jpg)
 
     -Grafana:
+
     ![terraform init](images/grafana.jpg)
 
 8. Security:
