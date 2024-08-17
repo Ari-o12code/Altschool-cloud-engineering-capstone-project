@@ -117,7 +117,7 @@ K(CI/CD Pipeline) --> E
     ```bash
     kubectl apply -f ingress.yaml
     ```
-    Below are images of our front-end displayed:
+    * **Below are images of our front-end displayed:**
     ![terraform init](images/sock-shop-frontend.jpg)
     ![terraform init](images/sock-shop-frontend2.jpg)
 
@@ -127,8 +127,9 @@ K(CI/CD Pipeline) --> E
 
 7. Monitoring:
 
-    -Monitoring tools (Prometheus & Grafana) will be installed using helm after first adding the prometheus repo to our project from artifacthub;
-    Run the command to install helm:
+    - Monitoring tools (Prometheus & Grafana) will be installed using helm after first adding the prometheus repo to our project from artifacthub;
+
+    * Run the command to install helm:
 
     ```bash
     helm install prometheus-community --namespace sock-shop prometheus-community/kube-prometheus-stack
@@ -136,8 +137,9 @@ K(CI/CD Pipeline) --> E
 
     ![terraform init](images/helm-install-prometheus.jpg)
 
-    -Both prometheus and grafana can be added to the configurations of the ingress.yaml file and hosted on aws route53.
-    -They can then be accessed as shown below;
+    * Both prometheus and grafana can be added to the configurations of the ingress.yaml file and hosted on aws route53.
+
+    * They can then be accessed as shown below;
 
     -Prometheus:
 
