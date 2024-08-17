@@ -123,6 +123,7 @@ Let's Encrypt
 
 6. CI/CD Pipeline:
     CI/CD Pipeline will be set up using GitHub Actions to automate infrastructure provisioning and application deployments triggered by code changes.
+    ![terraform init](images/terraform-build-ghactions.jpg)
 
 7. Monitoring:
 
@@ -145,6 +146,12 @@ Let's Encrypt
     -Grafana:
 
     ![terraform init](images/grafana.jpg)
+
+    You can use the command below to get running services on kubernetes:
+    ```bash
+    kubectl get svc -n sock-shop
+    ```
+    ![terraform init](images/kubectl-services.jpg)
 
 8. Security:
 
