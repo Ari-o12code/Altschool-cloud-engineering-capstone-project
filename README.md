@@ -1,11 +1,11 @@
-# Deployment of Socks Shop, a microservices-based application, on Kubernetes using Infrastructure as Code (IaaC).
+# Altschool Cloud Engineering Capstone Project: Deployment of Socks Shop, a microservices-based application, on Kubernetes using Infrastructure as Code (IaaC).
 
 ## Project Overview:
 We aim to deploy a microservices-based application, specifically the Socks Shop, using a modern approach that emphasizes automation and efficiency. The goal is to use Infrastructure as Code (IaaC) for rapid and reliable deployment on Kubernetes.
 The main task is to set up the Socks Shop application, a demonstration of a microservices architecture, available on GitHub. Using tools and technologies that automate the setup process, ensuring that the application can be deployed quickly and consistently.
 
 ## Architecture:
-
+```
 graph LR
 A[AWS] --> B(Route53)
 A --> C(EKS Cluster)
@@ -19,7 +19,7 @@ F --> I{Grafana}
 B --> J(Public Internet)
 J --> F
 K(CI/CD Pipeline) --> E
-
+```
 ### Explanation:
 
 1. This architecture utilizes AWS services: Route53 for domain management, EKS for the Kubernetes cluster, and IAM for authentication (not explicitly shown).
@@ -84,6 +84,12 @@ Let's Encrypt
     ```
     ![terraform init](images/terraform-apply-img.jpg)
 
+    Below are images of my eks cluster, vpc and ec2 instances provisioned by terraform:
+
+    ![terraform init](images/eks-cluster.jpg)
+    ![terraform init](images/vpc.jpg)
+    ![terraform init](images/ec2-instances.jpg)
+
 4. Kubernetes Configuration:
     -Create a folder to keep all kubernetes configuration files.
 
@@ -101,8 +107,35 @@ Let's Encrypt
      ```bash
     kubectl apply -f deployment.yaml
     ```
+    ![terraform init](images/kubectl-apply-img.jpg)
 
-Helm Charts: Deploy the Socks Shop application and monitoring tools (Prometheus, Grafana) using Helm charts.
-Ingress: Configure an Ingress resource to route traffic to the application based on the domain name hosted on Route53.
-CI/CD Pipeline: Set up a CI/CD pipeline using GitHub Actions to automate infrastructure provisioning and application deployments triggered by code changes.
+5. Displaying front-end of Application:
+    -ingress-nginx chart can be installed with helm, this helps us create a loadbalancer 
+    -After that has been created, we would specify a domain name hosted in aws route53 within our ingress file configurations where the front-end can be displayed
+    -we then run kubectl command below to apply changes;
+    ```bash
+    kubectl apply -f ingress.yaml
+    ```
+    Below are images of our front-end displayed:
+    ![terraform init](images/sock-shop-frontend.jpg)
+    ![terraform init](images/sock-shop-frontend2.jpg)
+
+6. CI/CD Pipeline:
+    CI/CD Pipeline will be set up using GitHub Actions to automate infrastructure provisioning and application deployments triggered by code changes.
+
+7. Monitoring:
+    -Monitoring tools (Prometheus & Grafana) will be installed using helm after first adding the prometheus repo to our project from artifacthub;
+    Run the command to install helm:
+    ```bash
+    helm install prometheus-community --namespace sock-shop prometheus-community/kube-prometheus-stack
+    ```
+    -Both prometheus and grafana can be added to the configurations of the ingress.yaml file and hosted on aws route53.
+    -They can then be accessed as shown below;
+
+    -Prometheus:
+    ![terraform init](images/prometheus.jpg)
+
+    -Grafana:
+    ![terraform init](images/grafana.jpg)
+
 
