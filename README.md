@@ -1,6 +1,7 @@
 # Altschool Cloud Engineering Capstone Project: Deployment of Socks Shop, a microservices-based application, on Kubernetes using Infrastructure as Code (IaaC).
 
 ## Project Overview:
+
 We aim to deploy a microservices-based application, specifically the Socks Shop, using a modern approach that emphasizes automation and efficiency. The goal is to use Infrastructure as Code (IaaC) for rapid and reliable deployment on Kubernetes.
 The main task is to set up the Socks Shop application, a demonstration of a microservices architecture, available on GitHub. Using tools and technologies that automate the setup process, ensuring that the application can be deployed quickly and consistently.
 
@@ -43,6 +44,7 @@ K(CI/CD Pipeline) --> E
 9. Let's Encrypt
 
 ## Deployment Steps:
+
 1. Configure AWS CLI: Set up AWS credentials and configure the AWS CLI for interacting with AWS services.
 
 2. Terraform Configuration:
@@ -67,7 +69,9 @@ K(CI/CD Pipeline) --> E
     - Use variables in terraform.tfvars to customize resource settings.
 
 3. Run Terraform: 
+
     -Use terraform init and terraform apply to provision the infrastructure.
+
     ```bash
     terraform init
     ```
@@ -91,6 +95,7 @@ K(CI/CD Pipeline) --> E
     ![terraform init](images/ec2-instances.jpg)
 
 4. Kubernetes Configuration:
+
     -Create a folder to keep all kubernetes configuration files.
 
      ```bash
@@ -112,6 +117,7 @@ K(CI/CD Pipeline) --> E
     ![terraform init](images/kubectl-apply-img.jpg)
 
 5. Displaying front-end of Application:
+
     -ingress-nginx chart can be installed with helm, this helps us create a loadbalancer 
 
     -After that has been created, we would specify a domain name hosted in aws route53 within our ingress file configurations where the front-end can be displayed
@@ -121,11 +127,13 @@ K(CI/CD Pipeline) --> E
     ```bash
     kubectl apply -f ingress.yaml
     ```
-    * **Below are images of our front-end displayed:**
+    -Below are images of our front-end displayed:
+    
     ![terraform init](images/sock-shop-frontend.jpg)
     ![terraform init](images/sock-shop-frontend2.jpg)
 
 6. CI/CD Pipeline:
+
     CI/CD Pipeline will be set up using GitHub Actions to automate infrastructure provisioning and application deployments triggered by code changes.
     ![terraform init](images/terraform-build-ghactions.jpg)
 
