@@ -124,6 +124,7 @@ Let's Encrypt
     CI/CD Pipeline will be set up using GitHub Actions to automate infrastructure provisioning and application deployments triggered by code changes.
 
 7. Monitoring:
+
     -Monitoring tools (Prometheus & Grafana) will be installed using helm after first adding the prometheus repo to our project from artifacthub;
     Run the command to install helm:
     ```bash
@@ -137,5 +138,31 @@ Let's Encrypt
 
     -Grafana:
     ![terraform init](images/grafana.jpg)
+
+8. Security:
+
+The application will be secured with HTTPS using a Let's Encrypt certificate. Let's Encrypt is a free, automated, and open certificate authority that provides free SSL/TLS certificates for websites. The certificate will be used to secure the communication between the client and the Socks-Shop application, ensuring that the data is encrypted and secure.
+
+## Conclusion
+
+This README document has provided a comprehensive overview of the Socks Shop microservices application deployment on Kubernetes using Infrastructure as Code (IaC). We have covered the key components, architecture, and steps involved in setting up the project.
+
+**Key Takeaways:**
+
+* **Infrastructure as Code:** Terraform was used to automate the provisioning of infrastructure resources on AWS, including the EKS cluster, VPC, and other necessary components.
+* **Microservices Architecture:** The Socks Shop application is a collection of microservices deployed on Kubernetes, enabling scalability and flexibility.
+* **Monitoring and Alerting:** Prometheus and Grafana were integrated to provide robust monitoring and visualization of application metrics.
+* **CI/CD Pipeline:** The use of a CI/CD pipeline (GitHub Actions) automated the deployment process, ensuring consistency and efficiency.
+* **Security:** Best practices for security were considered, including the use of HTTPS with Let's Encrypt and potential network perimeter security measures.
+
+**Future Enhancements:**
+
+* **Scaling:** Implement automated scaling mechanisms to adjust application resources based on load.
+* **Service Mesh:** Explore the use of a service mesh like Istio for advanced traffic management and observability.
+* **Additional Monitoring:** Consider adding more metrics and dashboards to gain deeper insights into application performance.
+* **Security Best Practices:** Continuously review and update security measures to address evolving threats.
+
+By following the steps outlined in this README and considering the future enhancements, you can further improve the deployment and management of the Socks Shop application on Kubernetes.
+
 
 
