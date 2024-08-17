@@ -32,15 +32,15 @@ K(CI/CD Pipeline) --> E
 ## Project prerequisites:
 
 -The following has to be installed/configured;
-Terraform
-AWS Account
-AWS cli
-Kubernetes
-Kubectl
-Helm
-Prometheus & grafana installed with helm 
-ELK Stack
-Let's Encrypt
+1. Terraform
+2. AWS Account
+3. AWS cli
+4. Kubernetes
+5. Kubectl
+6. Helm
+7. Prometheus & grafana installed with helm 
+8. ELK Stack
+9. Let's Encrypt
 
 ## Deployment Steps:
 1. Configure AWS CLI: Set up AWS credentials and configure the AWS CLI for interacting with AWS services.
