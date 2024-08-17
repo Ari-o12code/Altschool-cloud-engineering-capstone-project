@@ -100,6 +100,7 @@ K(CI/CD Pipeline) --> E
     -keep both deployment.yaml and ingress.yaml files in the directory.
 
     -configure the kubectl to connect to the EKS cluster, the specified region and the cluster name.
+
       ```bash
     aws eks update-kubeconfig --name=alameen-eks-cluster --region=us-east-1
     ```
@@ -112,8 +113,11 @@ K(CI/CD Pipeline) --> E
 
 5. Displaying front-end of Application:
     -ingress-nginx chart can be installed with helm, this helps us create a loadbalancer 
+
     -After that has been created, we would specify a domain name hosted in aws route53 within our ingress file configurations where the front-end can be displayed
+
     -we then run kubectl command below to apply changes;
+
     ```bash
     kubectl apply -f ingress.yaml
     ```
@@ -129,7 +133,7 @@ K(CI/CD Pipeline) --> E
 
     - Monitoring tools (Prometheus & Grafana) will be installed using helm after first adding the prometheus repo to our project from artifacthub;
 
-    * Run the command to install helm:
+    - Run the command to install helm:
 
     ```bash
     helm install prometheus-community --namespace sock-shop prometheus-community/kube-prometheus-stack
@@ -137,9 +141,9 @@ K(CI/CD Pipeline) --> E
 
     ![terraform init](images/helm-install-prometheus.jpg)
 
-    * Both prometheus and grafana can be added to the configurations of the ingress.yaml file and hosted on aws route53.
+    -Both prometheus and grafana can be added to the configurations of the ingress.yaml file and hosted on aws route53.
 
-    * They can then be accessed as shown below;
+    * **They can then be accessed as shown below;**
 
     -Prometheus:
 
